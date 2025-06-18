@@ -17,17 +17,6 @@ public class InfoAdapter implements DataSource {
 
     @Override
     public int getEta() {
-        Date dataDiNascita = info.getDataDiNascita();
-        Calendar nascita = Calendar.getInstance();
-        nascita.setTime(dataDiNascita);
-
-        Calendar oggi = Calendar.getInstance();
-        int eta = oggi.get(Calendar.YEAR) - nascita.get(Calendar.YEAR);
-
-        if (oggi.get(Calendar.DAY_OF_YEAR) < nascita.get(Calendar.DAY_OF_YEAR)) {
-            eta--;
-        }
-
-        return eta;
+        return (int)((new Date().getTime() - info.getDataDiNascita().getTime()) / (365L * 24 * 3600 * 1000));
     }
 }

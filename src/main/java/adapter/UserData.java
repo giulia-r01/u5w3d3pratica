@@ -17,4 +17,12 @@ public class UserData {
     public int getEta() {
         return eta;
     }
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "nomeCompleto='" + nomeCompleto + '\'' +
+                ", eta=" + eta +
+                '}';
+    }
 }

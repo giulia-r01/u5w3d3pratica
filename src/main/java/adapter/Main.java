@@ -7,11 +7,11 @@ public class Main {
         Info info = new Info();
         info.setNome("Mario");
         info.setCognome("Rossi");
-        info.dataDiNascita(new Date(90, 5, 15)); // 15 giugno 1990
+        info.dataDiNascita(new Date(90, 5, 15));
 
-        DataSource adapter = new InfoAdapter(info);
+        InfoAdapter infoAdapter = new InfoAdapter(info);
         UserData userData = new UserData();
-        userData.getData(adapter);
+        userData.getData(infoAdapter);
 
         System.out.println("Nome Completo: " + userData.getNomeCompleto());
         System.out.println("Età: " + userData.getEta());
